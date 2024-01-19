@@ -1,3 +1,10 @@
+import { Helmet } from 'react-helmet-async'
+
 export function Payment() {
-  return <h1>Payment</h1>
+  return (
+    <>
+      <Helmet title="Pagamento" />
+      <h1>Pagamento</h1>
+    </>
+  )
 }
