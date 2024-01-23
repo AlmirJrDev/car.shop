@@ -1,0 +1,100 @@
+{
+  "cars": [
+    {
+      "id": "0",
+      "title": "M340i xDrive",
+      "description": "A BMW Série 3: Elegância esportiva, design icônico. Desempenho potente, conforto refinado. Uma fusão perfeita de estilo e sofisticação.",
+      "marca": "BMW",
+      "model": "Esportivo",
+      "combustível": "Gasolina",
+      "ano": "2023",
+      "tags": [ "BMW", "Esportivo", "Gasolina", "2023"],
+      "price": 322950,
+      "image": "/images/cars/bmw3s.svg"
+    },
+    {
+      "id": "1",
+      "title": "Toyota Corrola GLI 2023",
+      "description": "O Corolla GLI 2023: confiabilidade, desempenho e estilo em um sedã esportivo de última geração.",
+      "marca": "Toyota",
+      "model": "Sedã",
+      "combustível": "Flex",
+      "ano": "2023",
+      "tags": ["Toyota", "2023", "Sedã", "Flex"],
+      "price": 148290,
+      "image": "/images/cars/corolla2023.svg"
+    },
+    {
+      "id": "2",
+      "title": "Chevrolet Silverado 2023",
+      "description": "A Silverado: robustez, confiabilidade e desempenho em uma pickup icônica.",
+      "marca": "Chevrolet",
+      "model": "Pick-up",
+      "combustível": "Diesel",
+      "ano": "2023",
+      "tags": ["Chevrolet", "2023", "Pick-up", "Diesel"],
+      "price": 519990,
+      "image": "/images/cars/silverado.svg"
+    },
+    {
+      "id": "3",
+      "title": "Honda Civic 2023",
+      "description": "O Honda Civic é um carro compacto popular conhecido por sua confiabilidade, eficiência de combustível e design versátil.",
+      "marca": "Honda",
+      "model": "Sedã",
+      "combustível": "Hibrido",
+      "ano": "2023",
+      "tags": ["Honda", "2023", "Sedã", "Hibrido"],
+      "price": 265900,
+      "image": "/images/cars/civic.svg"
+    },
+    {
+      "id": "4",
+      "title": "BYD Yuan Plus",
+      "description": "BYD: robustez, confiabilidade e desempenho em uma pickup icônica.",
+      "marca": "BYD",
+      "model": "SUV",
+      "combustível": "Eletrico",
+      "ano": "2023",
+      "tags": ["BYD", "2023", "SUV", "ELETRICO"],
+      "price": 229800,
+      "image": "/images/cars/yuan.svg"
+    },
+    {
+      "id": "5",
+      "title": "Volkswagen Polo GTS 2022",
+      "description": "O Polo GTS combina tecnologia e esportividade com itens exclusivos da lendária sigla GTS.",
+      "marca": "Volkswagen",
+      "model": "Hatch",
+      "combustível": "Flex",
+      "ano": "2022",
+      "tags": ["Volkswagen", "2022", "Hatch", "Flex"],
+      "price": 151490,
+      "image": "/images/cars/polo.svg"
+    },
+    {
+      "id": "6",
+      "title": "Volkswagen Vinus 2021",
+      "description": "O Polo GTS combina tecnologia e esportividade com itens exclusivos da lendária sigla GTS.",
+      "marca": "Volkswagen",
+      "model": "SUV",
+      "combustível": "Flex",
+      "ano": "2021",
+      "tags": ["Volkswagen", "2021", "SUV", "Flex"],
+      "price": 132390,
+      "image": "/images/cars/nivus.svg"
+    },
+    {
+      "id": "7",
+      "title": "Jeep Renegade 2022",
+      "description": "O Polo GTS combina tecnologia e esportividade com itens exclusivos da lendária sigla GTS.",
+      "marca": "Jeep",
+      "model": "SUV",
+      "combustível": "Flex",
+      "ano": "2022",
+      "tags": ["Jeep", "2022", "SUV", "Flex"],
+      "price": 132390,
+      "image": "/images/cars/renegade.svg"
+    }
+  ]
+}

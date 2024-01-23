@@ -1,32 +1,39 @@
-import { Helmet } from 'react-helmet-async'
-
 import {
   Truck,
   ShieldCheck,
   ShoppingCart,
   Wrench,
 
-
 } from '@phosphor-icons/react'
+import { useTheme } from 'styled-components'
 
+import { Card } from '../../components/Card'
+
+import { cars } from '../../../data.json'
 import {
   CarList,
+
   Heading,
   Hero,
   HeroContent,
   Info,
 } from './styles'
-
-import { useTheme } from 'styled-components'
 import { Header } from '../../components/Header'
+
+
+
+
 export function Home() {
   const theme = useTheme()
+ 
+
+
   return (
     <div>
-      <Header/>
+      <Header />
       <Hero>
         <HeroContent>
-        <Helmet title="Home" />
+        
           <img src="/images/carhome.svg" alt="car.shop car home" />
           <div>
             <Heading>
@@ -86,10 +93,12 @@ export function Home() {
       <CarList>
         <h2>Nosso catálogo</h2>
 
-     
+        
 
         <div>
-          
+          {cars.map((car) => (
+              <Card key={car.id} car={car} />
+            ))}
         </div>
       </CarList>
     </div>
