@@ -10,6 +10,13 @@ export const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 700px) {
+    a img{
+      width: 50%;
+    }
+  }
+    
 `
 
 export const Aside = styled.aside`
@@ -69,4 +76,11 @@ export const Aside = styled.aside`
       transform: translate(50%, -50%);
     }
   }
+
+  @media (max-width: 700px) {
+    div span{
+      ${mixins.fonts.textXS};
+    }
+  }
+    
 `
