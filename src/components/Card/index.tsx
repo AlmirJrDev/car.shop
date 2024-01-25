@@ -1,6 +1,8 @@
 import { ShoppingCart } from '@phosphor-icons/react'
 
+import { useState } from 'react'
 
+import { useCart } from '../../hooks/useCart'
 
 import {
   CarImg,
@@ -26,7 +28,15 @@ type Props = {
 }
 
 export function Card({ car }: Props) {
+  const [quantity, setQuantity] = useState(1)
+  const [isItemAdded, setIsItemAdded] = useState(false)
+  const { addItem, cart } = useCart()
 
+  function handleAddItem() {
+    addItem({ id: car.id, quantity })
+    setIsItemAdded(true)
+    setQuantity(0)
+  }
 
 
   return (
@@ -54,10 +64,11 @@ export function Card({ car }: Props) {
           </span>
         </Price>
 
-        <Order>
+        <Order $itemAdded={isItemAdded}>
           <Link
             to={`cart`}
-          
+            aria-disabled={cart.length === 0}
+            onClick={handleAddItem}
           >
             <button>
               <ShoppingCart size={22} weight="fill" />

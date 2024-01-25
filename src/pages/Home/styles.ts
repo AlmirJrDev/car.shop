@@ -78,3 +78,47 @@ export const CarList = styled.section`
     grid-column-gap: 32px;
   }
 `
+export const ContainerFilter = styled.div`
+  display: flex;
+`
+
+export const FilterCamp = styled.div`
+  display: flex;
+  position: relative;
+  background-color: ${({ theme }) => theme.colors['base-subtitle']};
+  height: 4rem;
+  border-radius: 20px;
+
+  label {
+    position: absolute;
+    top: 0.25rem;
+    left: 1rem;
+    font-size: 0.625rem;
+    padding: 0.65rem;
+  }
+
+  select {
+    width: 100%;
+    position: absolute;
+    background: transparent;
+    border: transparent;
+    height: 4rem;
+    padding: 1rem 1.5rem 0;
+    border-radius: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    color: ${({ theme }) => theme.colors['teal-light']};
+
+    option {
+      background-color: ${({ theme }) => theme.colors['base-subtitle']};
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 25%;
+    right: 1.5rem;
+  }
+`

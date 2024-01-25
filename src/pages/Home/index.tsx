@@ -3,6 +3,7 @@ import {
   ShieldCheck,
   ShoppingCart,
   Wrench,
+  CaretDown,
 
 } from '@phosphor-icons/react'
 import { useTheme } from 'styled-components'
@@ -13,24 +14,55 @@ import { cars } from '../../../data.json'
 import {
   CarList,
 
+  ContainerFilter,
+
+  FilterCamp,
+
   Heading,
   Hero,
   HeroContent,
   Info,
 } from './styles'
-import { Header } from '../../components/Header'
 
+
+import { useState } from 'react'
+
+type CarType = {
+  id: string
+  title: string
+  description: string
+  marca: string
+  model: string
+  combustível: string
+  ano: string
+  tags: string[]
+  price: number
+  image: string
+}
 
 
 
 export function Home() {
   const theme = useTheme()
+
+  const [filtroMarca, setFiltroMarca] = useState('')
+  const [filtroModelo, setFiltroModelo] = useState('')
+  const [filtroAno, setFiltroAno] = useState('')
+
+  function getCategoriasUnicas(campo: keyof CarType) {
+    const categorias = cars.map((car) => car[campo])
+    const categoriasFiltradas = categorias.filter(
+      (categoria): categoria is string => typeof categoria === 'string',
+    )
+    const categoriasUnicas = [...new Set(categoriasFiltradas)]
+    return categoriasUnicas.length > 0 ? [''].concat(categoriasUnicas) : []
+  }
  
 
 
   return (
     <div>
-      <Header />
+    
       <Hero>
         <HeroContent>
         
@@ -93,10 +125,97 @@ export function Home() {
       <CarList>
         <h2>Nosso catálogo</h2>
 
+        <ContainerFilter>
+          <FilterCamp>
+            <label htmlFor="marca">Produtora</label>
+            <select
+              id="marca"
+              value={filtroMarca}
+              onChange={(e) => setFiltroMarca(e.target.value)}
+            >
+              <option value="" disabled hidden>
+                Escolha uma marca!
+              </option>
+              {getCategoriasUnicas('marca').map((categoria) => (
+                <option key={categoria} value={categoria}>
+                  {categoria}
+                </option>
+              ))}
+            </select>
+            <CaretDown size={32} />
+          </FilterCamp>
+          <FilterCamp>
+            <label htmlFor="">Modelo</label>
+            <select
+              id="modelo"
+              value={filtroModelo}
+              onChange={(e) => setFiltroModelo(e.target.value)}
+            >
+              <option value="" disabled hidden>
+                Escolha um modelo!
+              </option>
+
+              {getCategoriasUnicas('model').map((categoria) => (
+                <option key={categoria} value={categoria}>
+                  {categoria}
+                </option>
+              ))}
+            </select>
+            <CaretDown size={32} />
+          </FilterCamp>
+          <FilterCamp>
+            <label htmlFor="">Ano</label>
+            <select
+              id="ano"
+              value={filtroAno}
+              onChange={(e) => setFiltroAno(e.target.value)}
+            >
+              <option value="" disabled hidden>
+                Escolha um ano!
+              </option>
+
+              {getCategoriasUnicas('ano').map((categoria) => (
+                <option key={categoria} value={categoria}>
+                  {categoria}
+                </option>
+              ))}
+            </select>
+            <CaretDown size={32} />
+          </FilterCamp>
+        </ContainerFilter>
+
         
 
         <div>
-          {cars.map((car) => (
+        {cars
+            .filter((car) => {
+              // Aplicar filtro por marca
+              if (
+                filtroMarca &&
+                filtroMarca !== '' &&
+                car.marca !== filtroMarca
+              ) {
+                return false
+              }
+
+              // Aplicar filtro por modelo
+              if (
+                filtroModelo &&
+                filtroModelo !== '' &&
+                car.model !== filtroModelo
+              ) {
+                return false
+              }
+
+              // Aplicar filtro por ano
+              if (filtroAno && filtroAno !== '' && car.ano !== filtroAno) {
+                return false
+              }
+
+              // Se passou por todos os filtros, exiba o carro
+              return true
+            })
+            .map((car) => (
               <Card key={car.id} car={car} />
             ))}
         </div>

@@ -77,7 +77,7 @@ export const Price = styled.div`
   }
 `
 
-export const Order = styled.div`
+export const Order = styled.div<{ $itemAdded?: boolean }>`
   display: flex;
   align-items: center;
   gap: 8px;
