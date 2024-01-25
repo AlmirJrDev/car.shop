@@ -69,7 +69,7 @@ Inicie o projeto
 
 <img src="./public/images/itenshome.png" alt="Itens Home imagem">
 
-<img src="./public/images/formcart.png.png" alt="Form Cat imagem">
+<img src="./public/images/formcart.png" alt="Form Cat imagem">
 
 <img src="./public/logo.svg" alt="Logo imagem">
 
