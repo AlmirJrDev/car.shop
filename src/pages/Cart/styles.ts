@@ -8,6 +8,10 @@ export const Container = styled.main`
   padding: 40px 20px;
   margin: 0 auto;
   gap: 32px;
+  
+  @media (max-width: 700px) {
+     flex-direction: column;
+    }
 `
 
 export const InfoContainer = styled.div`
@@ -36,6 +40,11 @@ export const FormsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
+
+    @media (max-width: 700px) {
+     width: 100%;
+     min-width: auto;
+    }
 `
 
 export const AddressContainer = styled(FormsContainer)``
@@ -90,6 +99,10 @@ export const PaymentOptions = styled.div`
     align-items: center;
     justify-content: space-between;
     gap: 12px;
+
+    @media (max-width: 700px) {
+     flex-direction: column;
+    }
   }
 `
 
