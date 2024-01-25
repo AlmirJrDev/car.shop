@@ -95,6 +95,42 @@
       "tags": ["Jeep", "2022", "SUV", "Flex"],
       "price": 132390,
       "image": "/images/cars/renegade.svg"
+    },
+    {
+      "id": "8",
+      "title": "BMW 430i Cabrio M",
+      "description": " Um conversível da Série 4, com o toque esportivo da marca 'M'. Um design harmonioso que une luxo e potência em uma experiência de direção única.",
+      "marca": "BMW",
+      "model": "Convercivel",
+      "combustível": "Gasolina",
+      "ano": "2021",
+      "tags": ["BMW", "2021", "Convercivel", "Gasolina"],
+      "price": 424685,
+      "image": "/images/cars/m4.svg"
+    },
+    {
+      "id": "9",
+      "title": "Toyota SW4 2021",
+      "description": " Design imponente, desempenho equilibrado e espaço interno amplo. Uma escolha que une funcionalidade e estilo a cada viagem. ",
+      "model": "SUV",
+      "marca": "Toyota",
+      "combustível": "Diesel",
+      "ano": "2021",
+      "tags": ["Toyota", "2021", "SUV", "Diesel"],
+      "price": 306128,
+      "image": "/images/cars/sw4.svg"
+    },
+    {
+      "id": "10",
+      "title": "Toyota Hilux 2022",
+      "description": " Design imponente, desempenho equilibrado e espaço interno amplo. Uma escolha que une funcionalidade e estilo a cada viagem. ",
+      "model": "Pick-up",
+      "marca": "Toyota",
+      "combustível": "Diesel",
+      "ano": "2022",
+      "tags": ["Toyota", "2022", "Pick-up", "Diesel"],
+      "price": 261274,
+      "image": "/images/cars/hilux.svg"
     }
   ]
 }

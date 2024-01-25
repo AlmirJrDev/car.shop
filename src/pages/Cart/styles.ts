@@ -79,6 +79,15 @@ export const AddressForm = styled.div`
     'neighborhood city state';
   grid-template-columns: 200px 1fr 60px;
   grid-gap: 16px 12px;
+
+    @media (max-width: 700px) {
+      grid-template-areas:
+    'cep . .'
+    'street street street'
+    'number fullAddress fullAddress'
+    'neighborhood city state';
+      grid-template-columns: 150px 1fr 60px;
+    }
 `
 
 export const PaymentContainer = styled(FormsContainer)``
@@ -173,6 +182,12 @@ export const CartTotal = styled.div`
     background-color: ${({ theme }) => theme.colors['base-button']};
     margin: 24px 0;
   }
+
+  @media (max-width: 700px) {
+     width: 100%;
+     min-width: auto;
+    }
+  
 `
 
 export const CartTotalInfo = styled.div`
