@@ -26,6 +26,7 @@ import {
 
 
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 
 type CarType = {
   id: string
@@ -62,7 +63,7 @@ export function Home() {
 
   return (
     <div>
-    
+       <Helmet title="Home" />
       <Hero>
         <HeroContent>
         
