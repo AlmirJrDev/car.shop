@@ -14,6 +14,8 @@ import { cars } from '../../../data.json'
 import {
   CarList,
 
+  CardCar,
+
   ContainerFilter,
 
   FilterCamp,
@@ -49,6 +51,9 @@ export function Home() {
   const [filtroMarca, setFiltroMarca] = useState('')
   const [filtroModelo, setFiltroModelo] = useState('')
   const [filtroAno, setFiltroAno] = useState('')
+  const [filtroCombustivel, setFiltroCombustivel] = useState('')
+
+  const [filtroPreco, setFiltroPreco] = useState(0);
 
   function getCategoriasUnicas(campo: keyof CarType) {
     const categorias = cars.map((car) => car[campo])
@@ -143,7 +148,7 @@ export function Home() {
                 </option>
               ))}
             </select>
-            <CaretDown size={32} />
+            <CaretDown size={25} />
           </FilterCamp>
           <FilterCamp>
             <label htmlFor="">Modelo</label>
@@ -162,7 +167,7 @@ export function Home() {
                 </option>
               ))}
             </select>
-            <CaretDown size={32} />
+            <CaretDown size={25} />
           </FilterCamp>
           <FilterCamp>
             <label htmlFor="">Ano</label>
@@ -181,16 +186,52 @@ export function Home() {
                 </option>
               ))}
             </select>
-            <CaretDown size={32} />
+            <CaretDown size={25} />
+          </FilterCamp>
+          <FilterCamp>
+      <label htmlFor="preco">Preço Máximo</label>
+      <input
+        type="range"
+        min={0}
+        max={1000000} // Defina um valor máximo adequado
+        value={filtroPreco}
+        step={25000}
+        onChange={(e) => setFiltroPreco(Number(e.target.value))}
+      />
+      <span>   {' '}
+            {new Intl.NumberFormat('pt-br', {
+              currency: 'BRL',
+              style: 'currency',
+            }).format(filtroPreco)}</span>
+    </FilterCamp>
+
+          <FilterCamp>
+            <label htmlFor="">Combustivel</label>
+            <select
+              id="combustivel"
+              value={filtroCombustivel}
+              onChange={(e) => setFiltroCombustivel(e.target.value)}
+            >
+              <option value="" disabled hidden>
+                Escolhe um combustivel
+              </option>
+
+              {getCategoriasUnicas('combustível').map((categoria) => (
+                <option key={categoria} value={categoria}>
+                  {categoria}
+                </option>
+              ))}
+            </select>
+            <CaretDown size={25} />
           </FilterCamp>
         </ContainerFilter>
 
         
 
-        <div>
+        <CardCar>
         {cars
             .filter((car) => {
-              // Aplicar filtro por marca
+              
               if (
                 filtroMarca &&
                 filtroMarca !== '' &&
@@ -199,7 +240,6 @@ export function Home() {
                 return false
               }
 
-              // Aplicar filtro por modelo
               if (
                 filtroModelo &&
                 filtroModelo !== '' &&
@@ -208,18 +248,29 @@ export function Home() {
                 return false
               }
 
-              // Aplicar filtro por ano
               if (filtroAno && filtroAno !== '' && car.ano !== filtroAno) {
                 return false
               }
-
-              // Se passou por todos os filtros, exiba o carro
+              if (
+                filtroPreco &&
+                filtroPreco !== 0 &&
+                car.price > filtroPreco
+              ) {
+                return false;
+              }
+        
+              if (filtroCombustivel && filtroCombustivel !== '' && car.combustível !== filtroCombustivel) {
+                return false
+              }
               return true
+            })
+            .sort((a, b) => {
+              return parseInt(b.ano, 10) - parseInt(a.ano, 10);
             })
             .map((car) => (
               <Card key={car.id} car={car} />
             ))}
-        </div>
+        </CardCar>
       </CarList>
     </div>
   )
