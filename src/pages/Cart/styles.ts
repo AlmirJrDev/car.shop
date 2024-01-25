@@ -83,10 +83,10 @@ export const AddressForm = styled.div`
     @media (max-width: 700px) {
       grid-template-areas:
     'cep . .'
-    'street street street'
-    'number fullAddress fullAddress'
+    'street street street '
+    ' fullAddress fullAddress'
     'neighborhood city state';
-      grid-template-columns: 150px 1fr 60px;
+      grid-template-columns: 80px 1fr 60px;
     }
 `
 
