@@ -149,7 +149,7 @@ export const CarInfo = styled.div`
 `
 export const CartTotal = styled.div`
   padding: 40px;
-  border-radius: 6px 36px;
+  border-radius:  36px;
   background-color: ${({ theme }) => theme.colors['base-card']};
   width: 100%;
   min-width: 448px;
