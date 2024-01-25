@@ -21,6 +21,12 @@ export const HeroContent = styled.div`
     flex-direction: column;
     gap: 66px;
   }
+
+  @media (max-width: 700px) {
+    img{
+      display: none;
+    } 
+  }
 `
 
 export const Heading = styled.div`
@@ -64,6 +70,10 @@ export const ContainerFilter = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-row-gap: 40px;
     grid-column-gap: 32px;
+    
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+    }
 `
 
 export const FilterCamp = styled.div`
@@ -79,7 +89,14 @@ export const FilterCamp = styled.div`
     left: 0.7rem;
     font-size: 0.625rem;
     padding: 0.65rem;
+
+    
   }
+
+  input{
+    margin-top: 0.25rem;
+      width: 80%;
+    }
 
   select {
     width: 100%;
@@ -99,7 +116,7 @@ export const FilterCamp = styled.div`
       background-color: ${({ theme }) => theme.colors['base-subtitle']};
     }
 
-   
+    
   }
 
   svg {
@@ -146,4 +163,11 @@ export const CardCar = styled.div`
     grid-row-gap: 40px;
     grid-column-gap: 32px;
   
+    @media (max-width: 700px) {
+      justify-content: center;
+      align-items: center;
+      grid-template-columns: 1fr;
+
+      margin: 0 auto;
+    }
 `
