@@ -74,8 +74,8 @@
     },
     {
       "id": "6",
-      "title": "Volkswagen Vinus 2021",
-      "description": "O Polo GTS combina tecnologia e esportividade com itens exclusivos da lendária sigla GTS.",
+      "title": "Volkswagen Nivus 2021",
+      "description": "Com novos conceitos de conectividade e streaming, o Nivus estreia um novo segmento no mercado, com um design inovador, que mistura elementos de SUV e linhas de cupê esportivo.",
       "marca": "Volkswagen",
       "model": "SUV",
       "combustível": "Flex",
@@ -87,7 +87,7 @@
     {
       "id": "7",
       "title": "Jeep Renegade 2022",
-      "description": "O Polo GTS combina tecnologia e esportividade com itens exclusivos da lendária sigla GTS.",
+      "description": "Viva uma nova aventura com o Novo Jeep Renegade. Sinta a força dos 185 cv de potência e a força do motor T270 e surpreenda-se.",
       "marca": "Jeep",
       "model": "SUV",
       "combustível": "Flex",
@@ -123,7 +123,7 @@
     {
       "id": "10",
       "title": "Toyota Hilux 2022",
-      "description": " Design imponente, desempenho equilibrado e espaço interno amplo. Uma escolha que une funcionalidade e estilo a cada viagem. ",
+      "description": " equipada com o motor diesel 2.8 L 16 V turbo, com 42,8 kgf.m de torque. É a força extra que, ao lado da tração 4×4 com acionamento eletrônico e bloqueio do diferencial.",
       "model": "Pick-up",
       "marca": "Toyota",
       "combustível": "Diesel",
