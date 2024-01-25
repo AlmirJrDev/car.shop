@@ -14,6 +14,9 @@ export const Container = styled.main`
   video {
     width: 45%;
     border-radius: 20px;
+    @media (max-width: 700px) {
+    display: none;
+    }
   }
 `
 
